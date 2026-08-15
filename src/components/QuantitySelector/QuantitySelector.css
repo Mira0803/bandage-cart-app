@@ -1,0 +1,30 @@
+.quantity-selector {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.quantity-selector__btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--fs-lg);
+  color: var(--color-heading);
+  transition: background-color 0.15s ease;
+}
+
+.quantity-selector__btn:hover {
+  background: var(--color-bg-alt);
+}
+
+.quantity-selector__value {
+  min-width: 32px;
+  text-align: center;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--color-heading);
+}

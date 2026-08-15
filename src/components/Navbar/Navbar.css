@@ -1,0 +1,130 @@
+.navbar {
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.navbar__logo {
+  font-size: 1.5rem;
+  font-weight: var(--fw-bold);
+  color: var(--color-heading);
+  letter-spacing: 0.02em;
+}
+
+.navbar__links {
+  display: none;
+  gap: var(--space-5);
+}
+
+.navbar__link {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  color: var(--color-heading);
+  transition: color 0.15s ease;
+}
+
+.navbar__link:hover {
+  color: var(--color-primary);
+}
+
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.navbar__login {
+  display: none;
+  align-items: center;
+  gap: var(--space-1);
+  color: var(--color-primary);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+}
+
+.navbar__icon-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: var(--color-heading);
+}
+
+.navbar__icon-btn img {
+  object-fit: center;
+  transition: transform 0.15s ease;
+}
+
+.navbar__icon-btn img:hover {
+  transform: scale(1.2);
+}
+
+.navbar__wishlist {
+  display: none;
+}
+
+.navbar__badge {
+  color: var(--color-primary);
+  font-size: 12px;
+  font-weight: var(--fw-regular);
+  line-height: 1;
+  min-width: 8px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+}
+
+/* Hamburger — mobile only, hidden once the desktop nav links take over */
+.navbar__menu-btn {
+  display: flex;
+  align-items: center;
+  color: var(--color-heading);
+}
+
+/* Full-width dropdown panel shown under the header when the hamburger is open */
+.navbar__mobile-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+  padding: var(--space-7) 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.navbar__mobile-link {
+  font-size: 1.875rem;
+  font-weight: var(--fw-regular);
+  color: var(--color-heading);
+}
+
+.navbar__mobile-link:hover {
+  color: var(--color-primary);
+}
+
+@media (min-width: 768px) {
+  .navbar__links {
+    display: flex;
+  }
+
+  .navbar__menu-btn,
+  .navbar__mobile-menu {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .navbar__login,
+  .navbar__wishlist {
+    display: flex;
+  }
+}

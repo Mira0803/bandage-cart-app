@@ -1,0 +1,21 @@
+.shop {
+  padding-top: var(--space-6);
+  padding-bottom: var(--space-8);
+}
+
+.shop__header {
+  margin-bottom: var(--space-5);
+  text-align: center;
+}
+
+.shop__title {
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-bold);
+  color: var(--color-heading);
+}
+
+.shop__subtitle {
+  font-size: var(--fs-sm);
+  color: var(--color-body);
+  margin-top: var(--space-1);
+}

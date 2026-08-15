@@ -1,0 +1,118 @@
+.featured-posts {
+  scroll-margin-top: 104px;
+  padding: var(--space-7) 0;
+  text-align: center;
+}
+
+.featured-posts__eyebrow {
+  font-size: var(--fs-sm);
+  color: var(--color-primary);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.08em;
+  margin-bottom: var(--space-1);
+}
+
+.featured-posts__title {
+  font-size: 2.5rem;
+  font-weight: var(--fw-bold);
+  color: var(--color-heading);
+  margin-bottom: var(--space-6);
+}
+
+.featured-posts__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  text-align: left;
+}
+
+.post-card {
+  overflow: hidden;
+  background: var(--color-bg);
+  box-shadow: var(--shadow-card);
+}
+
+.post-card__media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  background-size: cover;
+  background-position: center;
+}
+
+.post-card__badge {
+  position: absolute;
+  top: var(--space-3);
+  left: var(--space-3);
+  background: var(--color-danger);
+  color: var(--color-white);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  padding: var(--space-1) 10px;
+  border-radius: var(--radius-sm);
+}
+
+.post-card__body {
+  padding: var(--space-5) var(--space-7);
+}
+
+.post-card__tags {
+  font-size: var(--fs-xs);
+  color: var(--color-body);
+  word-spacing: 0.5em;
+}
+
+.post-card__tags span {
+  color: #8EC2F2;
+}
+
+.post-card__title {
+  font-size: 1.25rem;
+  font-weight: var(--fw-regular);
+  color: var(--color-heading);
+  margin-bottom: var(--space-2);
+}
+
+.post-card__excerpt {
+  font-size: var(--fs-sm);
+  color: var(--color-body);
+  margin-bottom: var(--space-4);
+}
+
+.post-card__meta {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  font-size: var(--fs-xs);
+  color: var(--color-muted);
+  margin-bottom: var(--space-4);
+}
+
+.post-card__meta-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.post-card__footer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.post-card__link {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  color: var(--color-heading);
+  cursor: pointer;
+}
+
+.post-card__link:hover {
+  color: var(--color-primary);
+}
+
+@media (min-width: 1024px) {
+  .featured-posts__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
