@@ -1,5 +1,7 @@
 # Cart App
 
+**Live site:** https://bandage-cart-app.netlify.app/
+
 A small e-commerce front end built with React + Vite + TypeScript, Redux Toolkit for
 cart state, and RTK Query for fetching products from the DummyJSON API
 (https://dummyjson.com/docs/products).
@@ -70,3 +72,5 @@ is included so refreshing on /shop or /cart doesn't 404 on Netlify:
 ```
 /*    /index.html   200
 ```
+
+**Deployed at:** https://bandage-cart-app.netlify.app/
