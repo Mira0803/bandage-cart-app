@@ -8,7 +8,7 @@
 
 .cta-banner__inner {
   position: relative;
-  padding: var(--space-8) 0;
+  padding: var(--space-8) var(--space-5);;
   max-width: 571px;
   text-align: center;
 }
