@@ -1,14 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 
-export interface ToastItem {
+// Generalized so any flow (checkout, add-to-cart, errors, etc.) can trigger
+// the same toast with its own copy, rather than one action tied to a single
+// use case.
+export interface ToastContent {
   title: string;
-  price: number;
-  thumbnail: string;
+  description: string;
+  thumbnail?: string;
 }
 
 interface NotificationState {
-  toast: ToastItem | null;
+  toast: ToastContent | null;
 }
 
 const initialState: NotificationState = { toast: null };
@@ -17,7 +20,7 @@ const notificationSlice = createSlice({
   name: "notification",
   initialState,
   reducers: {
-    showAddedToBasketToast: (state, action: PayloadAction<ToastItem>) => {
+    showToast: (state, action: PayloadAction<ToastContent>) => {
       state.toast = action.payload;
     },
     hideToast: (state) => {
@@ -26,5 +29,5 @@ const notificationSlice = createSlice({
   },
 });
 
-export const { showAddedToBasketToast, hideToast } = notificationSlice.actions;
+export const { showToast, hideToast } = notificationSlice.actions;
 export default notificationSlice.reducer;

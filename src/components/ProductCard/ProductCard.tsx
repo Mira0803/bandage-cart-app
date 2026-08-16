@@ -1,7 +1,6 @@
 import type { Product } from "../../types/product";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { addToCart } from "../../features/cart/cartSlice";
-import { showAddedToBasketToast } from "../../features/notification/notificationSlice";
 import { toggleWishlist } from "../../features/wishlist/wishListSlice";
 import { selectIsWishlisted } from "../../features/wishlist/wishListSelector";
 import "./ProductCard.css";
@@ -27,13 +26,6 @@ export default function ProductCard({ product, tag }: ProductCardProps) {
   function handleAddToCart() {
     if (isOutOfStock) return;
     dispatch(addToCart(product));
-    dispatch(
-      showAddedToBasketToast({
-        title: product.title,
-        price: discountedPrice,
-        thumbnail: product.thumbnail,
-      })
-    );
   }
 
   function handleToggleWishlist() {

@@ -10,7 +10,7 @@ export default function AddedToBasketToast() {
   const dispatch = useAppDispatch();
 
   // Auto-dismiss after a few seconds, but reset the timer whenever a new
-  // item is added while the toast is already showing.
+  // toast is shown while one is already on screen.
   useEffect(() => {
     if (!toast) return;
     const timer = setTimeout(() => dispatch(hideToast()), AUTO_DISMISS_MS);
@@ -23,7 +23,7 @@ export default function AddedToBasketToast() {
     <div className="toast-backdrop" role="status" aria-live="polite">
       <div className="toast">
         <div className="toast__header">
-          <h2 className="toast__title">Successfully added to basket</h2>
+          <h2 className="toast__title">{toast.title}</h2>
           <button
             type="button"
             className="toast__close"
@@ -42,11 +42,8 @@ export default function AddedToBasketToast() {
         </div>
 
         <div className="toast__body">
-          <img className="toast__thumb" src={toast.thumbnail} alt="" />
-          <div>
-            <p className="toast__product-title">{toast.title}</p>
-            <p className="toast__price">€ {toast.price.toFixed(2)}</p>
-          </div>
+          {toast.thumbnail && <img className="toast__thumb" src={toast.thumbnail} alt="" />}
+          <p className="toast__description">{toast.description}</p>
         </div>
       </div>
     </div>
